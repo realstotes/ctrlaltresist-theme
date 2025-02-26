@@ -25,13 +25,13 @@
     --light-section-bg: #eaeaea;   /* Section background with contrast */
     
     /* Dark Mode Colors */
-    --dark-bg: #121224;            /* Main background */
-    --dark-card-bg: #1e1e3a;       /* Card background */
+    --dark-bg: #0d0d1a;            /* Darker main background */
+    --dark-card-bg: #1a1a33;       /* Darker card background */
     --dark-text: #f0f0f0;          /* Text color */
     --dark-header-bg: #0a0a18;     /* Header background */
     --dark-topbar-bg: #060612;     /* Top bar background */
     --dark-footer-bg: #0a0a18;     /* Footer background */
-    --dark-section-bg: #171732;    /* Section background with contrast */
+    --dark-section-bg: #14142a;    /* Darker section background */
     
     /* Utility Colors */
     --white: #ffffff;
@@ -653,7 +653,7 @@ nav ul li a:hover,
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 2px solid var(--primary-color);
-    color: var(--secondary-color);
+    color: var (--secondary-color);
     position: relative;
     display: block !important;
     visibility: visible !important;
@@ -932,14 +932,14 @@ body.dark-mode {
 /* Top bar and header */
 body.dark-mode .top-bar {
     background-color: var(--dark-topbar-bg);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-mode header {
     background: linear-gradient(to bottom, var(--dark-header-bg), #0c0c1e);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* Logo and navigation */
@@ -976,14 +976,14 @@ body.dark-mode .menu-item a:hover {
 /* Section backgrounds */
 body.dark-mode .featured-news {
     background-color: var(--dark-section-bg);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-mode .main-content {
     background-color: var(--dark-bg);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 30px;
 }
 
@@ -1015,17 +1015,17 @@ body.dark-mode .widget_categories,
 body.dark-mode .widget_archive,
 body.dark-mode .widget_tag_cloud {
     background-color: var(--dark-card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-mode .news-card-content {
     background-color: var(--dark-card-bg);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode .side-article-content {
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Headings and text in dark mode */
@@ -1054,11 +1054,11 @@ body.dark-mode h6 {
 
 /* Sidebar in dark mode */
 body.dark-mode .sidebar {
-    background-color: #14142a;
+    background-color: #0f0f1e;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode .widget-title,
@@ -1107,8 +1107,8 @@ body.dark-mode .opinion.u-s-politics a {
 
 /* Footer in dark mode */
 body.dark-mode footer {
-    background: linear-gradient(to bottom, #131328, #0f0f1e);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: linear-gradient(to bottom, #0d0d1a, #0a0a18);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Timestamp in dark mode */
