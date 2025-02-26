@@ -2,9 +2,10 @@
 /**
  * The header for our theme
  */
+$dark_mode = isset($_COOKIE['darkMode']) && $_COOKIE['darkMode'] === 'true' ? 'dark-theme' : '';
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="<?php echo esc_attr($dark_mode); ?>">
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

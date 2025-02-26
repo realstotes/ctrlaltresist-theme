@@ -1,0 +1,184 @@
+/* Enhanced Dark Mode Theme 
+ * This file improves contrast between elements in dark mode
+ * by using a more varied color palette rather than similar shades
+ */
+
+:root.dark-theme {
+  /* Base colors with better differentiation */
+  --dark-bg-primary: #121212;       /* Very dark background */
+  --dark-bg-secondary: #1e1e1e;     /* Slightly lighter background for cards/sections */
+  --dark-bg-tertiary: #2d2d2d;      /* Even lighter for interactive elements */
+  
+  /* Text colors with improved readability */
+  --dark-text-primary: #ffffff;     /* Bright white for primary text */
+  --dark-text-secondary: #b0b0b0;   /* Lighter gray for secondary text */
+  --dark-text-muted: #707070;       /* Darker gray for less important text */
+  
+  /* Accent colors with better contrast */
+  --dark-accent-primary: #4e9eff;   /* Bright blue accent */
+  --dark-accent-secondary: #50c878; /* Emerald green for success/confirmation */
+  --dark-accent-tertiary: #e34c67;  /* Ruby pink for alerts/important actions */
+  --dark-accent-quaternary: #f0c040; /* Gold yellow for warnings/notifications */
+  
+  /* Border colors */
+  --dark-border-subtle: #383838;    /* Subtle borders */
+  --dark-border-distinct: #505050;  /* More visible borders */
+  
+  /* Interactive element states */
+  --dark-hover-overlay: rgba(255, 255, 255, 0.05); /* Subtle white overlay for hover */
+  --dark-active-overlay: rgba(255, 255, 255, 0.1); /* Stronger white overlay for active */
+}
+
+/* Apply the enhanced dark mode to common elements */
+.dark-theme body {
+  background-color: var(--dark-bg-primary);
+  color: var(--dark-text-primary);
+}
+
+/* Cards and content boxes */
+.dark-theme .card,
+.dark-theme .content-box,
+.dark-theme .panel {
+  background-color: var(--dark-bg-secondary);
+  border: 1px solid var(--dark-border-subtle);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons with better contrast */
+.dark-theme .button,
+.dark-theme button {
+  background-color: var(--dark-bg-tertiary);
+  color: var(--dark-text-primary);
+  border: 1px solid var(--dark-border-distinct);
+}
+
+.dark-theme .button:hover,
+.dark-theme button:hover {
+  background-color: var(--dark-accent-primary);
+  color: white;
+}
+
+.dark-theme .button-primary,
+.dark-theme .btn-primary {
+  background-color: var(--dark-accent-primary);
+  color: white;
+}
+
+.dark-theme .button-success,
+.dark-theme .btn-success {
+  background-color: var(--dark-accent-secondary);
+  color: white;
+}
+
+.dark-theme .button-danger,
+.dark-theme .btn-danger {
+  background-color: var(--dark-accent-tertiary);
+  color: white;
+}
+
+.dark-theme .button-warning,
+.dark-theme .btn-warning {
+  background-color: var(--dark-accent-quaternary);
+  color: var(--dark-bg-primary);
+}
+
+/* Form elements */
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+  background-color: var(--dark-bg-tertiary);
+  border: 1px solid var(--dark-border-distinct);
+  color: var(--dark-text-primary);
+}
+
+.dark-theme input:focus,
+.dark-theme select:focus,
+.dark-theme textarea:focus {
+  border-color: var(--dark-accent-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(78, 158, 255, 0.3);
+}
+
+/* Tables with alternating rows for better readability */
+.dark-theme table tr:nth-child(even) {
+  background-color: var(--dark-bg-secondary);
+}
+
+.dark-theme table tr:nth-child(odd) {
+  background-color: var(--dark-bg-tertiary);
+}
+
+.dark-theme table th {
+  background-color: var(--dark-bg-tertiary);
+  color: var(--dark-accent-primary);
+  border-bottom: 2px solid var(--dark-accent-primary);
+}
+
+.dark-theme table td {
+  border-bottom: 1px solid var(--dark-border-subtle);
+}
+
+/* Navigation elements */
+.dark-theme nav {
+  background-color: var(--dark-bg-secondary);
+}
+
+.dark-theme nav a {
+  color: var(--dark-text-secondary);
+}
+
+.dark-theme nav a:hover,
+.dark-theme nav a.active {
+  color: var(--dark-accent-primary);
+}
+
+/* Links with clear states */
+.dark-theme a {
+  color: var(--dark-accent-primary);
+}
+
+.dark-theme a:hover {
+  color: #7cb9ff; /* Lighter blue for hover */
+  text-decoration: underline;
+}
+
+.dark-theme a:visited {
+  color: #a98fff; /* Purple-ish for visited links */
+}
+
+/* Alert and notification styling */
+.dark-theme .alert-success,
+.dark-theme .notification-success {
+  background-color: rgba(80, 200, 120, 0.2);
+  border-left: 4px solid var(--dark-accent-secondary);
+  color: var(--dark-accent-secondary);
+}
+
+.dark-theme .alert-danger,
+.dark-theme .notification-error {
+  background-color: rgba(227, 76, 103, 0.2);
+  border-left: 4px solid var(--dark-accent-tertiary);
+  color: var(--dark-accent-tertiary);
+}
+
+.dark-theme .alert-warning,
+.dark-theme .notification-warning {
+  background-color: rgba(240, 192, 64, 0.2);
+  border-left: 4px solid var(--dark-accent-quaternary);
+  color: var(--dark-accent-quaternary);
+}
+
+.dark-theme .alert-info,
+.dark-theme .notification-info {
+  background-color: rgba(78, 158, 255, 0.2);
+  border-left: 4px solid var(--dark-accent-primary);
+  color: var(--dark-accent-primary);
+}
+
+/* Code blocks and pre elements */
+.dark-theme code,
+.dark-theme pre {
+  background-color: #161b22;
+  border: 1px solid var(--dark-border-subtle);
+  color: #e6edf3;
+}

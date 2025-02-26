@@ -790,7 +790,7 @@ nav ul li a:hover,
     padding: 3px 10px;
     border-radius: 20px;
     font-size: 0.85rem;
-    color: var(--dark-gray);
+    color: var (--dark-gray);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -921,6 +921,15 @@ footer {
     transition: all 0.3s ease;
 }
 
+/* Updated toggle state for enhanced dark mode */
+html.dark-theme .dark-mode-toggle .toggle-track {
+    background-color: var(--dark-accent-primary);
+}
+
+html.dark-theme .dark-mode-toggle .toggle-thumb {
+    left: 25px;
+}
+
 /* =============================================================================
    DARK MODE STYLING
    ========================================================================== */
@@ -929,6 +938,9 @@ body.dark-mode {
     color: var(--dark-text);
 }
 
+/* Dark mode backwards compatibility - 
+   These styles ensure the site still looks good 
+   even if the enhanced dark mode CSS isn't loaded */
 /* Top bar and header */
 body.dark-mode .top-bar {
     background-color: var(--dark-topbar-bg);

@@ -92,6 +92,9 @@ function ctrlaltresist_scripts() {
     // Enqueue Font Awesome
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css', array(), '6.0.0');
     
+    // Enqueue enhanced dark mode CSS
+    wp_enqueue_style('ctrlaltresist-dark-mode-enhanced', get_template_directory_uri() . '/styles/dark-mode-enhanced.css', array(), '1.0.0');
+    
     // Enqueue main JavaScript file
     wp_enqueue_script('ctrlaltresist-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
 }
