@@ -3,3 +3,246 @@
    ========================================================================== */
 /* This is a placeholder module for light-theme.css */
 
+/* Light Mode Theme 
+ * This file sets the default light mode color scheme
+ */
+
+:root {
+  /* Base colors */
+  --light-bg-primary: #ffffff;
+  --light-bg-secondary: #f5f5f7;
+  --light-bg-tertiary: #e8e8ed;
+  
+  /* Text colors */
+  --light-text-primary: #1a1a1a;
+  --light-text-secondary: #555555;
+  --light-text-muted: #777777;
+  
+  /* Accent colors */
+  --light-accent-primary: #e63946;
+  --light-accent-secondary: #2a9d8f;
+  --light-accent-tertiary: #e76f51;
+  --light-accent-quaternary: #f4a261;
+  
+  /* Border colors */
+  --light-border-subtle: #dddddd;
+  --light-border-distinct: #bbbbbb;
+  
+  /* Interactive element states */
+  --light-hover-overlay: rgba(0, 0, 0, 0.05);
+  --light-active-overlay: rgba(0, 0, 0, 0.1);
+}
+
+/* Apply the light mode by default */
+body {
+  background-color: var(--light-bg-primary);
+  color: var(--light-text-primary);
+}
+
+/* Cards and content boxes */
+.card,
+.content-box,
+.panel,
+.news-card,
+.sidebar-widget,
+.side-article {
+  background-color: var(--light-bg-primary);
+  border: 1px solid var(--light-border-subtle);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.button,
+button {
+  background-color: var(--light-bg-tertiary);
+  color: var(--light-text-primary);
+  border: 1px solid var(--light-border-distinct);
+}
+
+.button:hover,
+button:hover {
+  background-color: var(--light-accent-primary);
+  color: #fff;
+  box-shadow: 0 0 8px rgba(230, 57, 70, 0.5);
+}
+
+.button-primary,
+.btn-primary {
+  background-color: var(--light-accent-primary);
+  color: #fff;
+}
+
+.button-success,
+.btn-success {
+  background-color: var(--light-accent-secondary);
+  color: #fff;
+}
+
+.button-danger,
+.btn-danger {
+  background-color: var(--light-accent-tertiary);
+  color: #fff;
+}
+
+.button-warning,
+.btn-warning {
+  background-color: var(--light-accent-quaternary);
+  color: #fff;
+}
+
+/* Form elements */
+input,
+select,
+textarea,
+.search-field {
+  background-color: var(--light-bg-primary);
+  border: 1px solid var(--light-border-distinct);
+  color: var(--light-text-primary);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.search-field:focus {
+  border-color: var(--light-accent-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+}
+
+/* Tables */
+table tr:nth-child(even) {
+  background-color: var(--light-bg-secondary);
+}
+
+table tr:nth-child(odd) {
+  background-color: var(--light-bg-primary);
+}
+
+table th {
+  background-color: var(--light-bg-tertiary);
+  color: var(--light-text-primary);
+  border-bottom: 2px solid var(--light-accent-primary);
+}
+
+table td {
+  border-bottom: 1px solid var(--light-border-subtle);
+}
+
+/* Navigation elements */
+nav,
+header {
+  background-color: var(--light-bg-primary);
+  border-bottom: 1px solid var(--light-border-subtle);
+}
+
+nav a,
+#primary-menu li a {
+  color: var(--light-text-primary);
+}
+
+nav a:hover,
+nav a.active,
+#primary-menu li a:hover {
+  color: #fff;
+  background-color: var(--light-accent-primary);
+}
+
+/* Links */
+a {
+  color: var(--light-accent-primary);
+}
+
+a:hover {
+  color: #c52933;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #8e35a0;
+}
+
+/* Alert and notification styling */
+.alert-success,
+.notification-success {
+  background-color: rgba(42, 157, 143, 0.15);
+  border-left: 4px solid var(--light-accent-secondary);
+  color: var(--light-accent-secondary);
+}
+
+.alert-danger,
+.notification-error {
+  background-color: rgba(231, 111, 81, 0.15);
+  border-left: 4px solid var(--light-accent-tertiary);
+  color: var(--light-accent-tertiary);
+}
+
+.alert-warning,
+.notification-warning {
+  background-color: rgba(244, 162, 97, 0.15);
+  border-left: 4px solid var(--light-accent-quaternary);
+  color: var(--light-accent-quaternary);
+}
+
+.alert-info,
+.notification-info {
+  background-color: rgba(66, 135, 245, 0.15);
+  border-left: 4px solid #4287f5;
+  color: #4287f5;
+}
+
+/* Code blocks and pre elements */
+code,
+pre {
+  background-color: #f6f8fa;
+  border: 1px solid var(--light-border-subtle);
+  color: #24292e;
+}
+
+/* Specific theme elements */
+.top-bar {
+  background-color: #f0f0f5;
+  border-bottom: 1px solid var(--light-border-subtle);
+}
+
+.featured-news {
+  background-color: #f9f9ff;
+}
+
+.featured-title,
+.widget-title,
+.related-title,
+.comments-title,
+h2.featured-title {
+  background-color: #ffffff;
+  color: var(--light-text-primary);
+  border-left: 4px solid var(--light-accent-primary);
+}
+
+.category-tag {
+  background-color: var(--light-accent-primary);
+  color: #fff;
+}
+
+.read-more {
+  color: var(--light-accent-primary);
+  font-weight: bold;
+}
+
+.read-more:hover {
+  color: var(--light-accent-secondary);
+}
+
+.timestamp {
+  background-color: rgba(230, 57, 70, 0.08);
+  color: var(--light-text-secondary);
+}
+
+footer {
+  background-color: #f0f0f5;
+  border-top: 1px solid var(--light-border-subtle);
+}
+
+.dark-mode-toggle .toggle-track {
+  background-color: var(--light-border-distinct);
+}
+

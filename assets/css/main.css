@@ -5,6 +5,8 @@
 /* Import CSS modules */
 @import 'modules/variables.css';
 @import 'modules/reset.css';
+@import 'modules/buttons.css';
+@import 'modules/forms.css';
 @import 'modules/header.css';
 @import 'modules/navigation.css';
 @import 'modules/featured-news.css';

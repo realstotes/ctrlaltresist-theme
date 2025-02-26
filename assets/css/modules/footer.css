@@ -1,5 +1,213 @@
 ﻿/* =============================================================================
    FOOTER
    ========================================================================== */
-/* This is a placeholder module for footer.css */
+
+.site-footer {
+  background-color: var(--dark-color);
+  color: var(--text-light);
+  padding: var(--spacing-xl) 0 0;
+  margin-top: var(--spacing-xl);
+}
+
+/* Footer widgets section */
+.footer-widgets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding-bottom: var(--spacing-xl);
+}
+
+.footer-widget {
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer-widget-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--primary-color);
+  color: var(--light-color);
+}
+
+.footer-widget p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* About widget */
+.footer-logo {
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-logo img {
+  max-height: 50px;
+  width: auto;
+}
+
+.footer-about-text {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Recent posts widget */
+.footer-posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-post-item {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-post-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.footer-post-link {
+  color: var(--text-light);
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.footer-post-link:hover {
+  color: var(--primary-color);
+}
+
+.footer-post-date {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin-top: var(--spacing-xs);
+}
+
+/* Categories widget */
+.footer-categories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-category-link {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  transition: var(--transition-fast);
+}
+
+.footer-category-link:hover {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+/* Subscribe widget */
+.footer-subscribe-form {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-subscribe-input {
+  flex-grow: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  font-size: var(--font-size-sm);
+}
+
+.footer-subscribe-input::placeholder {
+  color: var(--text-muted);
+}
+
+.footer-subscribe-button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.footer-subscribe-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Social links */
+.footer-social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: var(--spacing-md);
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--text-light);
+  font-size: var(--font-size-lg);
+  transition: var(--transition-fast);
+}
+
+.footer-social-link:hover {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+/* Bottom bar */
+.footer-bottom {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: var(--spacing-md) 0;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.footer-copyright {
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-bottom-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+.footer-bottom-link {
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+}
+
+.footer-bottom-link:hover {
+  color: var(--primary-color);
+}
+
+@media (max-width: 992px) {
+  .footer-widgets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-widgets {
+    grid-template-columns: 1fr;
+  }
+}
 

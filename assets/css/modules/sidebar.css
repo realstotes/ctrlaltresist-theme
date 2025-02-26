@@ -1,5 +1,305 @@
 ﻿/* =============================================================================
-   SIDEBAR
+   SIDEBAR STYLES
    ========================================================================== */
-/* This is a placeholder module for sidebar.css */
+
+/* General sidebar styling */
+.sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+/* Widget general styling */
+.sidebar-widget {
+  margin-bottom: var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-color: var(--light-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.widget-title {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--light-bg-tertiary);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  border-left: 4px solid var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.widget-content {
+  padding: 0 var(--spacing-lg) var(--spacing-lg);
+}
+
+/* About widget */
+.about-widget {
+  text-align: center;
+}
+
+.about-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-md);
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-widget p {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.about-social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-bg-tertiary);
+  color: var(--text-secondary);
+  border-radius: var(--border-radius-circle);
+  transition: var(--transition-fast);
+}
+
+.social-icon:hover {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+/* Popular posts widget */
+.popular-posts-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.popular-post-item {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.popular-post-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.popular-post-image {
+  width: 80px;
+  height: 80px;
+  margin-right: var(--spacing-md);
+  flex-shrink: 0;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.popular-post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popular-post-content {
+  flex-grow: 1;
+}
+
+.popular-post-title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.popular-post-title a {
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.popular-post-title a:hover {
+  color: var(--primary-color);
+}
+
+.popular-post-date {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+/* Categories widget */
+.categories-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-item {
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category-name {
+  display: flex;
+  align-items: center;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.category-name:hover {
+  color: var(--primary-color);
+}
+
+.category-name i {
+  margin-right: var(--spacing-sm);
+  font-size: var(--font-size-xs);
+  color: var(--primary-color);
+}
+
+.category-count {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: var(--light-bg-tertiary);
+  border-radius: 20px;
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+/* Tags widget */
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-item {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--light-bg-tertiary);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  transition: var(--transition-fast);
+}
+
+.tag-item:hover {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+/* Newsletter widget */
+.newsletter-widget p {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter-input {
+  margin-bottom: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+}
+
+.newsletter-button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.newsletter-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Ad widget */
+.ad-widget {
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.ad-widget img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-sm);
+}
+
+.ad-widget p {
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+/* Recent comments widget */
+.recent-comments-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comment-item {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border-light);
+  font-size: var(--font-size-sm);
+}
+
+.comment-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.comment-author {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.comment-text {
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.comment-post {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.comment-post a {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.comment-post a:hover {
+  text-decoration: underline;
+}
 
