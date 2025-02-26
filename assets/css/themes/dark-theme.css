@@ -29,10 +29,73 @@
   --dark-active-overlay: rgba(255, 255, 255, 0.14); /* Stronger white overlay for active */
 }
 
+/* Dark Theme Styles */
+.dark-theme,
+body.dark-mode {
+  /* Overrides for dark mode */
+  --light-color: #121212;
+  --gray-dark: #f1f1f1;
+  --gray-medium: #b0b0b0;
+  --gray-light: #1e1e1e;
+  --white: #121212;
+  --black: #ffffff;
+}
+
 /* Apply the enhanced dark mode to common elements */
-.dark-theme body {
+.dark-theme body,
+body.dark-mode {
   background-color: var(--dark-bg-primary);
   color: var(--dark-text-primary);
+}
+
+/* Header dark mode */
+.dark-theme .site-header,
+.dark-mode .site-header {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+.dark-theme .site-header__logo-text,
+.dark-mode .site-header__logo-text {
+  color: #f1f1f1;
+}
+
+.dark-theme .site-header__top-bar,
+.dark-mode .site-header__top-bar {
+  background-color: #111;
+}
+
+/* Navigation dark mode */
+.dark-theme .main-navigation__menu > li > a,
+.dark-mode .main-navigation__menu > li > a {
+  color: #f1f1f1;
+}
+
+.dark-theme .main-navigation__menu > li > a:hover,
+.dark-mode .main-navigation__menu > li > a:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Featured section dark mode */
+.dark-theme .featured__main,
+.dark-mode .featured__main,
+.dark-theme .featured__item,
+.dark-mode .featured__item {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .featured__main-title a,
+.dark-mode .featured__main-title a,
+.dark-theme .featured__item-title a,
+.dark-mode .featured__item-title a {
+  color: #f1f1f1;
+}
+
+.dark-theme .featured__main-excerpt,
+.dark-mode .featured__main-excerpt {
+  color: #b0b0b0;
 }
 
 /* Cards and content boxes */
@@ -41,10 +104,18 @@
 .dark-theme .panel,
 .dark-theme .news-card,
 .dark-theme .sidebar-widget,
-.dark-theme .side-article {
+.dark-theme .side-article,
+.dark-mode .news-card,
+.dark-theme .article-content,
+.dark-mode .article-content {
   background-color: var(--dark-bg-secondary);
   border: 1px solid var(--dark-border-subtle);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-theme .news-card-content h3 a,
+.dark-mode .news-card-content h3 a {
+  color: #f1f1f1;
 }
 
 /* Buttons with better contrast */
@@ -90,7 +161,15 @@
 .dark-theme input,
 .dark-theme select,
 .dark-theme textarea,
-.dark-theme .search-field {
+.dark-theme .search-field,
+.dark-theme input[type="text"],
+.dark-mode input[type="text"],
+.dark-theme input[type="email"],
+.dark-mode input[type="email"],
+.dark-theme input[type="search"],
+.dark-mode input[type="search"],
+.dark-theme textarea,
+.dark-mode textarea {
   background-color: var(--dark-bg-tertiary);
   border: 1px solid var(--dark-border-distinct);
   color: var(--dark-text-primary);
@@ -103,6 +182,12 @@
   border-color: var(--dark-accent-primary);
   outline: none;
   box-shadow: 0 0 0 3px rgba(109, 189, 255, 0.3);
+}
+
+.dark-theme .search-form button,
+.dark-mode .search-form button {
+  background-color: #333;
+  color: #f1f1f1;
 }
 
 /* Tables with alternating rows for better readability */
@@ -233,12 +318,14 @@
   color: var(--dark-text-secondary);
 }
 
-.dark-theme footer {
+.dark-theme footer,
+.dark-mode .site-footer {
   background-color: #0a0a14;
   border-top: 1px solid var(--dark-border-subtle);
 }
 
-.dark-theme .dark-mode-toggle .toggle-track {
+.dark-theme .dark-mode-toggle .toggle-track,
+.dark-mode .theme-switcher__track {
   background-color: var(--dark-accent-primary);
 }
 
@@ -250,4 +337,17 @@
 .dark-theme .news-card-content p,
 .dark-theme .article-body {
   color: var(--dark-text-secondary);
+}
+
+/* Comments dark mode */
+.dark-theme .comment,
+.dark-mode .comment {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+/* Make images slightly dimmer in dark mode to reduce contrast */
+.dark-theme img,
+.dark-mode img {
+  opacity: 0.9;
 }
