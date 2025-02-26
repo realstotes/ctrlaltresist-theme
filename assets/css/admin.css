@@ -1,0 +1,135 @@
+/**
+ * CtrlAltResist Admin CSS
+ * Create a folder called 'css' in your 'assets' directory and place this file there
+ */
+
+/* Custom meta box styling */
+#ctrlaltresist_featured_article .inside {
+    padding: 12px;
+}
+
+#ctrlaltresist_featured_article label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#ctrlaltresist_featured_article input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.description {
+    color: #666;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* Featured post styling in admin list */
+.column-featured_post {
+    width: 80px;
+    text-align: center;
+}
+
+.featured-icon {
+    color: #e63946;
+    font-size: 18px;
+}
+
+.featured-icon.inactive {
+    color: #ccc;
+}
+
+/* Post list enhancements */
+.wp-list-table .column-thumbnail {
+    width: 80px;
+}
+
+.wp-list-table .column-thumbnail img {
+    max-width: 60px;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Editor enhancements */
+.editor-post-featured-image-wrapper {
+    margin-bottom: 20px;
+}
+
+/* Admin notice styling */
+.ctrlaltresist-admin-notice {
+    background-color: #f0f6fc;
+    border-left-color: #e63946;
+    padding: 12px 15px;
+}
+
+.ctrlaltresist-admin-notice h3 {
+    margin-top: 0;
+    color: #23282d;
+}
+
+.ctrlaltresist-admin-notice p {
+    color: #50575e;
+}
+
+.ctrlaltresist-admin-notice .button-primary {
+    background-color: #e63946;
+    border-color: #d32535;
+}
+
+.ctrlaltresist-admin-notice .button-primary:hover,
+.ctrlaltresist-admin-notice .button-primary:focus {
+    background-color: #d32535;
+    border-color: #c01d2d;
+}
+
+/* Customizer styling */
+.customize-control-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.customize-control input[type="text"],
+.customize-control input[type="url"] {
+    width: 100%;
+}
+
+.customize-control-description {
+    font-style: italic;
+    margin-top: 4px;
+    color: #555;
+}
+
+/* Widget area styling */
+.widgets-holder-wrap .widget-inside {
+    padding: 12px;
+}
+
+.widget-inside label {
+    margin-bottom: 8px;
+    display: block;
+}
+
+.widgets-holder-wrap .widget .widget-top {
+    border-left: 3px solid #e63946;
+}
+
+/* Help text */
+.ctrlaltresist-help-text {
+    background-color: #f8f9fa;
+    border-left: 4px solid #e63946;
+    padding: 12px 15px;
+    margin: 15px 0;
+}
+
+.ctrlaltresist-help-text h4 {
+    margin-top: 0;
+    color: #23282d;
+}
+
+.ctrlaltresist-help-text ul {
+    margin-bottom: 0;
+}
+
+.ctrlaltresist-help-text li {
+    margin-bottom: 8px;
+}
