@@ -93,7 +93,7 @@ function ctrlaltresist_scripts() {
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css', array(), '6.0.0');
     
     // Enqueue enhanced dark mode CSS with higher priority (higher number = higher priority for CSS)
-    wp_enqueue_style('ctrlaltresist-dark-mode-enhanced', get_template_directory_uri() . '/styles/dark-mode-enhanced.css', array('ctrlaltresist-main'), '1.0.1');
+    wp_enqueue_style('ctrlaltresist-dark-mode-enhanced', get_template_directory_uri() . '/assets/css/themes/dark-theme.css', array('ctrlaltresist-main'), '1.0.1');
     
     // Enqueue main JavaScript file
     wp_enqueue_script('ctrlaltresist-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.1', true);

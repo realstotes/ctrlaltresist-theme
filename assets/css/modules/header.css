@@ -135,4 +135,221 @@ nav ul li a:hover,
     transition: background-color 0.3s ease;
 }
 
+/* =============================================================================
+   HEADER STYLES
+   ========================================================================== */
+
+/* Top bar */
+.site-header__top-bar {
+  background-color: var(--dark-color);
+  color: var(--text-light);
+  padding: var(--spacing-sm) 0;
+  font-size: var(--font-size-sm);
+}
+
+.site-header__top-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Trending section */
+.trending {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.trending__label {
+  margin-right: var(--spacing-md);
+  color: var(--primary-color);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.trending__items-wrapper {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none; /* Firefox */
+  max-width: 70%;
+}
+
+.trending__items-wrapper::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.trending__item {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-right: var(--spacing-lg);
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.trending__item:after {
+  content: "•";
+  margin-left: var(--spacing-md);
+  color: var(--accent-color);
+}
+
+.trending__item:last-child:after {
+  display: none;
+}
+
+.trending__item:hover {
+  color: var(--primary-color);
+}
+
+/* Social bar */
+.social-bar {
+  display: flex;
+  align-items: center;
+}
+
+.social-bar__link {
+  color: var(--text-light);
+  font-size: var(--font-size-lg);
+  margin-left: var(--spacing-md);
+  transition: var(--transition-fast);
+}
+
+.social-bar__link:hover {
+  color: var(--primary-color);
+}
+
+/* Theme switcher */
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  margin-left: var(--spacing-lg);
+  cursor: pointer;
+}
+
+.theme-switcher__icon {
+  color: var(--text-light);
+  margin-right: var(--spacing-sm);
+}
+
+.theme-switcher__track {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: var(--accent-color);
+  border-radius: 20px;
+  transition: var(--transition-normal);
+}
+
+.theme-switcher__thumb {
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--text-light);
+  border-radius: 50%;
+  transition: var(--transition-normal);
+}
+
+.dark-mode .theme-switcher__thumb {
+  left: 21px;
+}
+
+/* Main header */
+.site-header {
+  background-color: var(--light-color);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 100;
+}
+
+.site-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+}
+
+/* Branding */
+.site-header__branding {
+  flex: 0 0 auto;
+  max-width: 230px;
+}
+
+.site-header__logo-link {
+  text-decoration: none;
+  display: block;
+}
+
+.site-header__logo-text {
+  font-size: var(--font-size-xxl);
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.site-header__logo-text span {
+  color: var(--primary-color);
+}
+
+/* Navigation container */
+.site-header__navigation-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* Search */
+.site-header__search {
+  margin-right: var(--spacing-xl);
+}
+
+.search-form {
+  position: relative;
+}
+
+.search-field {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  width: 200px;
+  transition: var(--transition-fast);
+}
+
+.search-field:focus {
+  width: 250px;
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.search-submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0 var(--spacing-md);
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-xl);
+  color: var(--text-primary);
+}
+
+/* Container class */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
 

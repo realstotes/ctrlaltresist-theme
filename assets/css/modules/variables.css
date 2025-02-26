@@ -1,36 +1,62 @@
 ﻿/* =============================================================================
-   VARIABLES AND CORE SETTINGS
+   VARIABLES
    ========================================================================== */
+
 :root {
-      /* Primary Color Scheme */
-      --primary-color: #e63946;      /* Red accent */
-      --secondary-color: #1a1a2e;    /* Dark blue/navy */
-      --accent-color: #4361ee;       /* Bright blue */
-      
-      /* Text Colors */
-      --text-color: #333333;         /* Base text color for light mode */
-      
-      /* Light Mode Colors */
-      --light-bg: #f6f6f6;           /* Main background */
-      --light-card-bg: #ffffff;      /* Card background */
-      --light-text: #333333;         /* Text color */
-      --light-header-bg: #ffffff;    /* Header background */
-      --light-topbar-bg: #1a1a2e;    /* Top bar background */
-      --light-footer-bg: #1a1a2e;    /* Footer background */
-      --light-section-bg: #eaeaea;   /* Section background with contrast */
-      
-      /* Dark Mode Colors */
-      --dark-bg: #121224;            /* Main background */
-      --dark-card-bg: #1e1e3a;       /* Card background */
-      --dark-text: #f0f0f0;          /* Text color */
-      --dark-header-bg: #0a0a18;     /* Header background */
-      --dark-topbar-bg: #060612;     /* Top bar background */
-      --dark-footer-bg: #0a0a18;     /* Footer background */
-      --dark-section-bg: #171732;    /* Section background with contrast */
-      
-      /* Utility Colors */
-      --white: #ffffff;
-      --light-gray: #f1f1f1;
-      --medium-gray: #e0e0e0;
-      --dark-gray: #666666;
-  }
+  /* Main color palette */
+  --primary-color: #e63946;
+  --secondary-color: #1d3557;
+  --accent-color: #457b9d;
+  --background-color: #f1faee;
+  --light-color: #ffffff;
+  --dark-color: #333333;
+  
+  /* Text colors */
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-light: #ffffff;
+  --text-accent: #e63946;
+  
+  /* Border colors */
+  --border-color: #dddddd;
+  --border-light: #eeeeee;
+  --border-dark: #999999;
+  
+  /* Box shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.10);
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.5rem;
+  
+  /* Typography */
+  --font-primary: 'Roboto', 'Helvetica Neue', sans-serif;
+  --font-secondary: 'Merriweather', Georgia, serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+  --font-size-xxxl: 2.5rem;
+  
+  /* Container widths */
+  --container-max-width: 1200px;
+  --container-narrow: 960px;
+  
+  /* Border radius */
+  --border-radius-sm: 3px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 12px;
+  --border-radius-circle: 50%;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
