@@ -92,11 +92,16 @@ function ctrlaltresist_scripts() {
     // Enqueue Font Awesome
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css', array(), '6.0.0');
     
-    // Enqueue enhanced dark mode CSS
-    wp_enqueue_style('ctrlaltresist-dark-mode-enhanced', get_template_directory_uri() . '/styles/dark-mode-enhanced.css', array(), '1.0.0');
+    // Enqueue enhanced dark mode CSS with higher priority (higher number = higher priority for CSS)
+    wp_enqueue_style('ctrlaltresist-dark-mode-enhanced', get_template_directory_uri() . '/styles/dark-mode-enhanced.css', array('ctrlaltresist-main'), '1.0.1');
     
     // Enqueue main JavaScript file
-    wp_enqueue_script('ctrlaltresist-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('ctrlaltresist-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.1', true);
+    
+    // Pass dark mode variable to JavaScript
+    wp_localize_script('ctrlaltresist-main', 'ctrlAltResistSettings', array(
+        'darkModeCookieName' => 'darkMode',
+    ));
 }
 add_action('wp_enqueue_scripts', 'ctrlaltresist_scripts');
 
@@ -278,6 +283,11 @@ function ctrlaltresist_body_classes($classes) {
     // Add class for single post
     if (is_single()) {
         $classes[] = 'single-post-view';
+    }
+    
+    // Ensure dark mode class is added if cookie is set
+    if (isset($_COOKIE['darkMode']) && $_COOKIE['darkMode'] === 'true') {
+        $classes[] = 'dark-mode';
     }
     
     return $classes;

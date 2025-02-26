@@ -1,32 +1,32 @@
 /* Enhanced Dark Mode Theme 
  * This file improves contrast between elements in dark mode
- * by using a more varied color palette rather than similar shades
+ * with significantly more distinct complementary colors
  */
 
 :root.dark-theme {
-  /* Base colors with better differentiation */
+  /* Base colors with greater differentiation */
   --dark-bg-primary: #121212;       /* Very dark background */
-  --dark-bg-secondary: #1e1e1e;     /* Slightly lighter background for cards/sections */
-  --dark-bg-tertiary: #2d2d2d;      /* Even lighter for interactive elements */
+  --dark-bg-secondary: #1e1e2e;     /* Slightly blueish dark background for cards */
+  --dark-bg-tertiary: #2d2d3f;      /* Even lighter with blue tint for interactive elements */
   
   /* Text colors with improved readability */
-  --dark-text-primary: #ffffff;     /* Bright white for primary text */
-  --dark-text-secondary: #b0b0b0;   /* Lighter gray for secondary text */
-  --dark-text-muted: #707070;       /* Darker gray for less important text */
+  --dark-text-primary: #f8f8f2;     /* Slightly off-white for less eye strain */
+  --dark-text-secondary: #d0d0e0;   /* Light lavender gray for secondary text */
+  --dark-text-muted: #8c8ca0;       /* Blue-tinted gray for less important text */
   
-  /* Accent colors with better contrast */
-  --dark-accent-primary: #4e9eff;   /* Bright blue accent */
-  --dark-accent-secondary: #50c878; /* Emerald green for success/confirmation */
-  --dark-accent-tertiary: #e34c67;  /* Ruby pink for alerts/important actions */
-  --dark-accent-quaternary: #f0c040; /* Gold yellow for warnings/notifications */
+  /* Accent colors with much higher contrast */
+  --dark-accent-primary: #6dbdff;   /* Bright sky blue accent - much lighter */
+  --dark-accent-secondary: #64ffda; /* Bright teal for success/confirmation */
+  --dark-accent-tertiary: #ff7eac;  /* Bright pink for alerts/important actions */
+  --dark-accent-quaternary: #ffcf44; /* Bright gold for warnings/notifications */
   
   /* Border colors */
-  --dark-border-subtle: #383838;    /* Subtle borders */
-  --dark-border-distinct: #505050;  /* More visible borders */
+  --dark-border-subtle: #383850;    /* Subtle borders with blue tint */
+  --dark-border-distinct: #5050aa;  /* More visible borders with purple tint */
   
   /* Interactive element states */
-  --dark-hover-overlay: rgba(255, 255, 255, 0.05); /* Subtle white overlay for hover */
-  --dark-active-overlay: rgba(255, 255, 255, 0.1); /* Stronger white overlay for active */
+  --dark-hover-overlay: rgba(255, 255, 255, 0.07); /* Subtle white overlay for hover */
+  --dark-active-overlay: rgba(255, 255, 255, 0.14); /* Stronger white overlay for active */
 }
 
 /* Apply the enhanced dark mode to common elements */
@@ -38,10 +38,13 @@
 /* Cards and content boxes */
 .dark-theme .card,
 .dark-theme .content-box,
-.dark-theme .panel {
+.dark-theme .panel,
+.dark-theme .news-card,
+.dark-theme .sidebar-widget,
+.dark-theme .side-article {
   background-color: var(--dark-bg-secondary);
   border: 1px solid var(--dark-border-subtle);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Buttons with better contrast */
@@ -55,37 +58,39 @@
 .dark-theme .button:hover,
 .dark-theme button:hover {
   background-color: var(--dark-accent-primary);
-  color: white;
+  color: #000;
+  box-shadow: 0 0 8px rgba(109, 189, 255, 0.5);
 }
 
 .dark-theme .button-primary,
 .dark-theme .btn-primary {
   background-color: var(--dark-accent-primary);
-  color: white;
+  color: #000;
 }
 
 .dark-theme .button-success,
 .dark-theme .btn-success {
   background-color: var(--dark-accent-secondary);
-  color: white;
+  color: #000;
 }
 
 .dark-theme .button-danger,
 .dark-theme .btn-danger {
   background-color: var(--dark-accent-tertiary);
-  color: white;
+  color: #000;
 }
 
 .dark-theme .button-warning,
 .dark-theme .btn-warning {
   background-color: var(--dark-accent-quaternary);
-  color: var(--dark-bg-primary);
+  color: #000;
 }
 
 /* Form elements */
 .dark-theme input,
 .dark-theme select,
-.dark-theme textarea {
+.dark-theme textarea,
+.dark-theme .search-field {
   background-color: var(--dark-bg-tertiary);
   border: 1px solid var(--dark-border-distinct);
   color: var(--dark-text-primary);
@@ -93,10 +98,11 @@
 
 .dark-theme input:focus,
 .dark-theme select:focus,
-.dark-theme textarea:focus {
+.dark-theme textarea:focus,
+.dark-theme .search-field:focus {
   border-color: var(--dark-accent-primary);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(78, 158, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(109, 189, 255, 0.3);
 }
 
 /* Tables with alternating rows for better readability */
@@ -119,17 +125,22 @@
 }
 
 /* Navigation elements */
-.dark-theme nav {
+.dark-theme nav,
+.dark-theme header {
   background-color: var(--dark-bg-secondary);
+  border-bottom: 1px solid var(--dark-border-subtle);
 }
 
-.dark-theme nav a {
+.dark-theme nav a,
+.dark-theme #primary-menu li a {
   color: var(--dark-text-secondary);
 }
 
 .dark-theme nav a:hover,
-.dark-theme nav a.active {
-  color: var(--dark-accent-primary);
+.dark-theme nav a.active,
+.dark-theme #primary-menu li a:hover {
+  color: #000;
+  background-color: var(--dark-accent-primary);
 }
 
 /* Links with clear states */
@@ -138,39 +149,39 @@
 }
 
 .dark-theme a:hover {
-  color: #7cb9ff; /* Lighter blue for hover */
+  color: #a2d7ff; /* Much lighter blue for hover */
   text-decoration: underline;
 }
 
 .dark-theme a:visited {
-  color: #a98fff; /* Purple-ish for visited links */
+  color: #c8a5ff; /* Brighter purple for visited links */
 }
 
 /* Alert and notification styling */
 .dark-theme .alert-success,
 .dark-theme .notification-success {
-  background-color: rgba(80, 200, 120, 0.2);
+  background-color: rgba(100, 255, 218, 0.15);
   border-left: 4px solid var(--dark-accent-secondary);
   color: var(--dark-accent-secondary);
 }
 
 .dark-theme .alert-danger,
 .dark-theme .notification-error {
-  background-color: rgba(227, 76, 103, 0.2);
+  background-color: rgba(255, 126, 172, 0.15);
   border-left: 4px solid var(--dark-accent-tertiary);
   color: var(--dark-accent-tertiary);
 }
 
 .dark-theme .alert-warning,
 .dark-theme .notification-warning {
-  background-color: rgba(240, 192, 64, 0.2);
+  background-color: rgba(255, 207, 68, 0.15);
   border-left: 4px solid var(--dark-accent-quaternary);
   color: var(--dark-accent-quaternary);
 }
 
 .dark-theme .alert-info,
 .dark-theme .notification-info {
-  background-color: rgba(78, 158, 255, 0.2);
+  background-color: rgba(109, 189, 255, 0.15);
   border-left: 4px solid var(--dark-accent-primary);
   color: var(--dark-accent-primary);
 }
@@ -178,7 +189,65 @@
 /* Code blocks and pre elements */
 .dark-theme code,
 .dark-theme pre {
-  background-color: #161b22;
+  background-color: #12151f;
   border: 1px solid var(--dark-border-subtle);
   color: #e6edf3;
+}
+
+/* Specific theme elements */
+.dark-theme .top-bar {
+  background-color: #0a0a14;
+  border-bottom: 1px solid var(--dark-border-subtle);
+}
+
+.dark-theme .featured-news {
+  background-color: #151525;
+}
+
+.dark-theme .featured-title,
+.dark-theme .widget-title,
+.dark-theme .related-title,
+.dark-theme .comments-title,
+.dark-theme h2.featured-title {
+  background-color: #202038;
+  color: var(--dark-text-primary);
+  border-left: 4px solid var(--dark-accent-tertiary);
+}
+
+.dark-theme .category-tag {
+  background-color: var(--dark-accent-tertiary);
+  color: #000;
+}
+
+.dark-theme .read-more {
+  color: var(--dark-accent-primary);
+  font-weight: bold;
+}
+
+.dark-theme .read-more:hover {
+  color: var(--dark-accent-secondary);
+}
+
+.dark-theme .timestamp {
+  background-color: rgba(109, 189, 255, 0.15);
+  color: var(--dark-text-secondary);
+}
+
+.dark-theme footer {
+  background-color: #0a0a14;
+  border-top: 1px solid var(--dark-border-subtle);
+}
+
+.dark-theme .dark-mode-toggle .toggle-track {
+  background-color: var(--dark-accent-primary);
+}
+
+/* Make sure text is always readable */
+.dark-theme .main-article-content {
+  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.6));
+}
+
+.dark-theme .news-card-content p,
+.dark-theme .article-body {
+  color: var(--dark-text-secondary);
 }

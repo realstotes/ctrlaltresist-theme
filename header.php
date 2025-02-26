@@ -2,7 +2,9 @@
 /**
  * The header for our theme
  */
+// Enhanced dark mode detection
 $dark_mode = isset($_COOKIE['darkMode']) && $_COOKIE['darkMode'] === 'true' ? 'dark-theme' : '';
+$dark_mode_body = isset($_COOKIE['darkMode']) && $_COOKIE['darkMode'] === 'true' ? 'dark-mode' : '';
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="<?php echo esc_attr($dark_mode); ?>">
@@ -12,7 +14,7 @@ $dark_mode = isset($_COOKIE['darkMode']) && $_COOKIE['darkMode'] === 'true' ? 'd
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class($dark_mode_body); ?>>
 <?php wp_body_open(); ?>
 
     <!-- Enhanced Header with top bar -->

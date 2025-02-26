@@ -34,31 +34,48 @@
         });
         
         // Enhanced Dark Mode Toggle implementation
-        // Check for saved dark mode preference
+        // Check for saved dark mode preference (first from localStorage, fallback to cookie)
         const savedMode = localStorage.getItem('darkMode');
-        if (savedMode === 'true') {
-            $('html').addClass('dark-theme');
-            $('body').addClass('dark-mode');
-            $('.dark-mode-toggle .toggle-icon').removeClass('fa-sun').addClass('fa-moon');
-            $('.dark-mode-toggle .toggle-thumb').css('left', '25px');
+        const cookieMode = document.cookie.replace(/(?:(?:^|.*;\s*)darkMode\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        
+        // Synchronize cookie and localStorage
+        if (savedMode === 'true' || cookieMode === 'true') {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
         }
         
         // Dark mode toggle
         $('.dark-mode-toggle').on('click', function() {
-            $('html').toggleClass('dark-theme');
-            $('body').toggleClass('dark-mode');
-            
-            // Update icon and toggle position
             if ($('html').hasClass('dark-theme')) {
-                $('.dark-mode-toggle .toggle-icon').removeClass('fa-sun').addClass('fa-moon');
-                $('.dark-mode-toggle .toggle-thumb').css('left', '25px');
-                localStorage.setItem('darkMode', 'true');
+                disableDarkMode();
             } else {
-                $('.dark-mode-toggle .toggle-icon').removeClass('fa-moon').addClass('fa-sun');
-                $('.dark-mode-toggle .toggle-thumb').css('left', '3px');
-                localStorage.setItem('darkMode', 'false');
+                enableDarkMode();
             }
         });
+        
+        // Helper functions for dark mode
+        function enableDarkMode() {
+            $('html').addClass('dark-theme');
+            $('body').addClass('dark-mode');
+            $('.dark-mode-toggle .toggle-icon').removeClass('fa-sun').addClass('fa-moon');
+            $('.dark-mode-toggle .toggle-thumb').css('left', '25px');
+            
+            // Save preference in both localStorage and cookie
+            localStorage.setItem('darkMode', 'true');
+            document.cookie = 'darkMode=true; path=/; max-age=31536000'; // 1 year expiry
+        }
+        
+        function disableDarkMode() {
+            $('html').removeClass('dark-theme');
+            $('body').removeClass('dark-mode');
+            $('.dark-mode-toggle .toggle-icon').removeClass('fa-moon').addClass('fa-sun');
+            $('.dark-mode-toggle .toggle-thumb').css('left', '3px');
+            
+            // Save preference in both localStorage and cookie
+            localStorage.setItem('darkMode', 'false');
+            document.cookie = 'darkMode=false; path=/; max-age=31536000'; // 1 year expiry
+        }
     });
     
 })(jQuery);
