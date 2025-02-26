@@ -19,20 +19,40 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check if style.css exists
+        run: |
+          if [ -f "style.css" ]; then
+            echo "✅ style.css found"
+            cat style.css | grep -n "Version:" || echo "No Version line found"
+          else
+            echo "❌ style.css not found. Listing directory contents:"
+            ls -la
+            exit 1
+          fi
+      
       - name: Update version number
         run: |
-          # Get current version from style.css
-          CURRENT_VERSION=$(grep -oP "Version: \K[0-9]+\.[0-9]+(\.[0-9]+)?" style.css)
-          echo "Current version: $CURRENT_VERSION"
+          # Get current version from style.css with more robust pattern matching
+          CURRENT_VERSION=$(grep -oP "Version:\s*\K[0-9]+\.[0-9]+(\.[0-9]+)?" style.css || echo "0.0.0")
+          
+          if [[ "$CURRENT_VERSION" == "0.0.0" ]]; then
+            echo "⚠️ Could not extract current version, using 0.0.0"
+          else
+            echo "✅ Current version: $CURRENT_VERSION"
+          fi
           
           # Split version into components
           IFS='.' read -r -a VERSION_PARTS <<< "$CURRENT_VERSION"
-          MAJOR=${VERSION_PARTS[0]}
-          MINOR=${VERSION_PARTS[1]}
+          MAJOR=${VERSION_PARTS[0]:-0}
+          MINOR=${VERSION_PARTS[1]:-0}
           PATCH=${VERSION_PARTS[2]:-0}
+          
+          echo "Version parts: MAJOR=$MAJOR, MINOR=$MINOR, PATCH=$PATCH"
           
           # Determine version update type from commit message
           COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "Commit message: $COMMIT_MSG"
+          
           if [[ $COMMIT_MSG == *"[major]"* ]]; then
             ((MAJOR++))
             MINOR=0
@@ -51,17 +71,26 @@ jobs:
           NEW_VERSION="$MAJOR.$MINOR.$PATCH"
           echo "New version: $NEW_VERSION (${UPDATE_TYPE} update)"
           
-          # Update style.css file
-          sed -i "s/Version: ${CURRENT_VERSION}/Version: ${NEW_VERSION}/" style.css
+          # Update style.css file with improved sed pattern
+          if sed -i "s/Version:\s*[0-9]\+\.[0-9]\+\(\.[0-9]\+\)\?/Version: ${NEW_VERSION}/" style.css; then
+            echo "✅ Version updated in style.css"
+          else
+            echo "❌ Failed to update version in style.css"
+            exit 1
+          fi
 
       - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add style.css
+          git diff --staged --name-status
+          
           if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0
           fi
-          git commit -m "Bump version number [skip ci]"
+          
+          echo "Committing changes to style.css"
+          git commit -m "Bump version to $(grep -oP "Version:\s*\K[0-9]+\.[0-9]+(\.[0-9]+)?" style.css) [skip ci]"
           git push

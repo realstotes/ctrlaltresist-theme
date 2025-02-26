@@ -1,0 +1,14 @@
+$sectionMappings = @{
+    "VARIABLES AND CORE SETTINGS" = "modules/variables-and-core-settings.css"
+    "RESET AND BASE STYLES" = "modules/reset-and-base-styles.css"
+    "TOP BAR AND TRENDING SECTION" = "modules/top-bar-and-trending-section.css"
+    "HEADER AND NAVIGATION" = "modules/header-and-navigation.css"
+    "FEATURED NEWS SECTION" = "modules/featured-news-section.css"
+    "MAIN CONTENT AREA" = "modules/main-content-area.css"
+    "SIDEBAR STYLING" = "modules/sidebar-styling.css"
+    "FOOTER STYLING" = "modules/footer-styling.css"
+    "DARK MODE TOGGLE" = "themes/dark-mode-toggle.css"
+    "DARK MODE STYLING" = "themes/dark-mode-styling.css"
+    "UTILITIES AND ANIMATIONS" = "modules/utilities-and-animations.css"
+    "RESPONSIVE STYLES" = "modules/responsive-styles.css"
+}

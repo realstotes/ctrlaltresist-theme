@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTRL+ALT+RESIST</title>
+    
+    <!-- For development: Use main.css with @import statements -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- For production: Use concatenated CSS file for better performance -->
+    <!-- <link rel="stylesheet" href="assets/css/main.min.css"> -->
+</head>
+<body>
+    <!-- Page content goes here -->
+    <script>
+        // Example dark mode toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            // Optional: Save preference to localStorage
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+        }
+        
+        // Check for saved preference
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+            }
+        });
+    </script>
+</body>
+</html>

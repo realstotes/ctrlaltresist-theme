@@ -34,20 +34,20 @@ if (-not (Test-Path $themesDir)) {
     New-Item -Path $themesDir -ItemType Directory -Force | Out-Null
 }
 
-# Define the sections to extract with their target files
+# Define the sections to extract with their target files - updated with EXACT section names from the CSS file
 $sectionMappings = @{
     "VARIABLES AND CORE SETTINGS" = "modules/variables.css"
     "RESET AND BASE STYLES" = "modules/reset.css"
-    "HEADER STYLES" = "modules/header.css"
-    "NAVIGATION STYLES" = "modules/navigation.css"
-    "FEATURED NEWS" = "modules/featured-news.css"
-    "ARTICLE STYLES" = "modules/articles.css"
-    "SIDEBAR STYLES" = "modules/sidebar.css"
-    "FOOTER STYLES" = "modules/footer.css"
-    "UTILITY CLASSES" = "modules/utilities.css"
+    "TOP BAR AND TRENDING SECTION" = "modules/topbar.css"
+    "HEADER AND NAVIGATION" = "modules/header.css"
+    "FEATURED NEWS SECTION" = "modules/featured-news.css"
+    "MAIN CONTENT AREA" = "modules/content.css"
+    "SIDEBAR STYLING" = "modules/sidebar.css"
+    "FOOTER STYLING" = "modules/footer.css"
+    "DARK MODE TOGGLE" = "modules/dark-mode-toggle.css"
+    "DARK MODE STYLING" = "themes/dark-theme.css"
+    "UTILITIES AND ANIMATIONS" = "modules/utilities.css"
     "RESPONSIVE STYLES" = "modules/responsive.css"
-    "LIGHT THEME" = "themes/light-theme.css"
-    "DARK THEME" = "themes/dark-theme.css"
 }
 
 # Read the source file
@@ -91,10 +91,37 @@ $sectionContent
     }
 }
 
+# Create an empty light theme file with default structure
+$lightThemeFile = Join-Path $themesDir "light-theme.css"
+$lightThemeContent = @"
+/* =============================================================================
+   LIGHT THEME (DEFAULT)
+   ========================================================================== */
+
+/* 
+ * This is the default theme. The base styles are already defined in the main stylesheets.
+ * This file can be used to add light theme specific overrides if needed.
+ */
+
+:root {
+    /* Light theme variables already defined in variables.css */
+}
+
+/* Add any light theme specific overrides below */
+
+"@
+
+try {
+    Set-Content -Path $lightThemeFile -Value $lightThemeContent -Encoding UTF8
+    Write-Host "Created light theme file at $lightThemeFile" -ForegroundColor Green
+} catch {
+    Write-Host "Error creating light theme file: $_" -ForegroundColor Red
+}
+
 Write-Host "`nExtraction complete! Extracted $extractCount sections." -ForegroundColor Cyan
 Write-Host "Remember to update your main.css to import these modules." -ForegroundColor Cyan
 
-# Create or update main.css with import statements
+# Create or update main.css with import statements that match your original main.css structure
 $mainCssPath = Join-Path $OutputDir "main.css"
 $mainCssContent = @"
 /* =============================================================================
@@ -104,12 +131,13 @@ $mainCssContent = @"
 /* Import CSS modules */
 @import 'modules/variables.css';
 @import 'modules/reset.css';
+@import 'modules/topbar.css';
 @import 'modules/header.css';
-@import 'modules/navigation.css';
 @import 'modules/featured-news.css';
-@import 'modules/articles.css';
+@import 'modules/content.css';
 @import 'modules/sidebar.css';
-@import 'modules/footer.css'; 
+@import 'modules/footer.css';
+@import 'modules/dark-mode-toggle.css';
 @import 'modules/utilities.css';
 @import 'modules/responsive.css';
 

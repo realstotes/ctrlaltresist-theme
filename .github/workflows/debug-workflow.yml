@@ -1,0 +1,39 @@
+name: Debug Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Manual trigger option
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: List repository files
+        run: |
+          echo "Repository contents:"
+          ls -la
+          
+      - name: Check for style.css
+        run: |
+          if [ -f "style.css" ]; then
+            echo "style.css exists. Content:"
+            cat style.css | head -10
+          else
+            echo "style.css not found. Searching for it:"
+            find . -name "style.css"
+          fi
+          
+      - name: Test version extraction
+        run: |
+          if [ -f "style.css" ]; then
+            echo "Testing version extraction:"
+            grep -n "Version:" style.css || echo "No Version line found"
+            VERSION=$(grep -oP "Version:\s*\K[0-9]+\.[0-9]+(\.[0-9]+)?" style.css || echo "NOT FOUND")
+            echo "Extracted version: $VERSION"
+          fi
