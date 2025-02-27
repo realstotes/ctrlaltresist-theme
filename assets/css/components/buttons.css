@@ -1,0 +1,191 @@
+/* Button Styles */
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  line-height: 1.5;
+}
+
+.button:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.button:active,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+/* Button sizes */
+.button--small {
+  font-size: var(--font-size-sm);
+  padding: 0.25rem 0.75rem;
+}
+
+.button--large {
+  font-size: var(--font-size-lg);
+  padding: 0.75rem 1.5rem;
+}
+
+/* Button variations */
+.button--secondary {
+  background-color: var(--secondary-color);
+}
+
+.button--secondary:hover {
+  background-color: var(--dark-color);
+}
+
+.button--outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.button--outline:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.button--outline-light {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+
+.button--outline-light:hover {
+  background-color: var(--white);
+  color: var(--dark-color);
+}
+
+/* Button states */
+.button:disabled,
+button:disabled,
+input[type="button"]:disabled,
+input[type="reset"]:disabled,
+input[type="submit"]:disabled {
+  background-color: var(--gray-light);
+  color: var (--gray-medium);
+  cursor: not-allowed;
+}
+
+/* Button with icon */
+.button--icon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.button--icon i {
+  font-size: 0.9em;
+}
+
+.button--icon-right i {
+  order: 2;
+}
+
+/* Social share buttons */
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
+}
+
+.share-title {
+  display: flex;
+  align-items: center;
+  margin-right: var(--spacing-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--gray-dark);
+}
+
+.share-title i {
+  margin-right: var(--spacing-xs);
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+}
+
+.share-button i {
+  margin-right: var(--spacing-xs);
+}
+
+.share-button.facebook {
+  background-color: #3b5998;
+}
+
+.share-button.twitter {
+  background-color: #1da1f2;
+}
+
+.share-button.linkedin {
+  background-color: #0077b5;
+}
+
+.share-button.email {
+  background-color: #444;
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .share-buttons {
+    justify-content: center;
+  }
+  
+  .share-title {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .button--responsive,
+  .share-button {
+    flex: 1 0 auto;
+    text-align: center;
+    justify-content: center;
+  }
+}

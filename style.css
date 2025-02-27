@@ -1,10 +1,18 @@
 /*
 Theme Name: CtrlAltResist
-Theme URI: https://ctrlaltresist.com/
-Author: Rowan Fitz
-Description: A custom political news blog theme for CtrlAltResist.com
-Version: 8.3.0
+Theme URI: https://example.com/ctrlaltresist
+Author: Your Name
+Author URI: https://example.com
+Description: A modern political news and commentary theme
+Version: 1.0
 License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: ctrlaltresist
-GitHub Theme URI: realstotes/ctrlaltresist-theme
+Tags: news, politics, blog, two-columns, right-sidebar, custom-colors, featured-images, theme-options, translation-ready
+*/
+
+/* 
+This is the main theme stylesheet that WordPress identifies.
+All actual styles have been moved to the /assets/css/ directory
+and are imported via the main.css file there.
 */

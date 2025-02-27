@@ -1,0 +1,249 @@
+
+/**
+ * Responsive Utilities
+ * These utilities handle responsive display and design
+ */
+
+/* ==========================================================================
+   Responsive Display Classes
+   ========================================================================== */
+
+/* Hide on extra small devices (phones) */
+@media (max-width: 575.98px) {
+  .d-none-xs {
+    display: none !important;
+  }
+}
+
+/* Hide on small devices (tablets) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .d-none-sm {
+    display: none !important;
+  }
+}
+
+/* Hide on medium devices (small laptops) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .d-none-md {
+    display: none !important;
+  }
+}
+
+/* Hide on large devices (desktops) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .d-none-lg {
+    display: none !important;
+  }
+}
+
+/* Hide on extra large devices (large desktops) */
+@media (min-width: 1200px) {
+  .d-none-xl {
+    display: none !important;
+  }
+}
+
+/* Only display on extra small devices */
+.d-xs-only {
+  display: none !important;
+}
+@media (max-width: 575.98px) {
+  .d-xs-only {
+    display: block !important;
+  }
+}
+
+/* Only display on small devices */
+.d-sm-only {
+  display: none !important;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .d-sm-only {
+    display: block !important;
+  }
+}
+
+/* Only display on medium devices */
+.d-md-only {
+  display: none !important;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .d-md-only {
+    display: block !important;
+  }
+}
+
+/* Only display on large devices */
+.d-lg-only {
+  display: none !important;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .d-lg-only {
+    display: block !important;
+  }
+}
+
+/* Only display on extra large devices */
+.d-xl-only {
+  display: none !important;
+}
+@media (min-width: 1200px) {
+  .d-xl-only {
+    display: block !important;
+  }
+}
+
+/* ==========================================================================
+   Responsive Text Alignment
+   ========================================================================== */
+
+/* Extra small devices (phones) */
+@media (max-width: 575.98px) {
+  .text-left-xs {
+    text-align: left !important;
+  }
+  .text-center-xs {
+    text-align: center !important;
+  }
+  .text-right-xs {
+    text-align: right !important;
+  }
+}
+
+/* Small devices (tablets) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .text-left-sm {
+    text-align: left !important;
+  }
+  .text-center-sm {
+    text-align: center !important;
+  }
+  .text-right-sm {
+    text-align: right !important;
+  }
+}
+
+/* Medium devices (laptops) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .text-left-md {
+    text-align: left !important;
+  }
+  .text-center-md {
+    text-align: center !important;
+  }
+  .text-right-md {
+    text-align: right !important;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .text-left-lg {
+    text-align: left !important;
+  }
+  .text-center-lg {
+    text-align: center !important;
+  }
+  .text-right-lg {
+    text-align: right !important;
+  }
+}
+
+/* Extra large devices (large desktops) */
+@media (min-width: 1200px) {
+  .text-left-xl {
+    text-align: left !important;
+  }
+  .text-center-xl {
+    text-align: center !important;
+  }
+  .text-right-xl {
+    text-align: right !important;
+  }
+}
+
+/* ==========================================================================
+   Responsive Spacings
+   ========================================================================== */
+
+/* Extra small devices (phones) */
+@media (max-width: 575.98px) {
+  .mt-xs-0 { margin-top: 0 !important; }
+  .mb-xs-0 { margin-bottom: 0 !important; }
+  .ml-xs-0 { margin-left: 0 !important; }
+  .mr-xs-0 { margin-right: 0 !important; }
+  
+  .pt-xs-0 { padding-top: 0 !important; }
+  .pb-xs-0 { padding-bottom: 0 !important; }
+  .pl-xs-0 { padding-left: 0 !important; }
+  .pr-xs-0 { padding-right: 0 !important; }
+  
+  .mt-xs-1 { margin-top: var(--spacing-xs) !important; }
+  .mb-xs-1 { margin-bottom: var(--spacing-xs) !important; }
+  
+  .mt-xs-2 { margin-top: var(--spacing-sm) !important; }
+  .mb-xs-2 { margin-bottom: var(--spacing-sm) !important; }
+  
+  .mt-xs-3 { margin-top: var(--spacing-md) !important; }
+  .mb-xs-3 { margin-bottom: var(--spacing-md) !important; }
+  
+  .mt-xs-4 { margin-top: var(--spacing-lg) !important; }
+  .mb-xs-4 { margin-bottom: var(--spacing-lg) !important; }
+  
+  .mt-xs-5 { margin-top: var(--spacing-xl) !important; }
+  .mb-xs-5 { margin-bottom: var(--spacing-xl) !important; }
+}
+
+/* Small devices (tablets) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .mt-sm-0 { margin-top: 0 !important; }
+  .mb-sm-0 { margin-bottom: 0 !important; }
+  
+  .mt-sm-3 { margin-top: var(--spacing-md) !important; }
+  .mb-sm-3 { margin-bottom: var(--spacing-md) !important; }
+  
+  .mt-sm-5 { margin-top: var(--spacing-xl) !important; }
+  .mb-sm-5 { margin-bottom: var(--spacing-xl) !important; }
+}
+
+/* ==========================================================================
+   Responsive Flexbox
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .flex-column-mobile {
+    flex-direction: column !important;
+  }
+  
+  .align-items-start-mobile {
+    align-items: flex-start !important;
+  }
+  
+  .justify-content-center-mobile {
+    justify-content: center !important;
+  }
+}
+
+/* ==========================================================================
+   Responsive Order Classes
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .order-first-mobile {
+    order: -1 !important;
+  }
+  
+  .order-last-mobile {
+    order: 999 !important;
+  }
+  
+  .order-0-mobile {
+    order: 0 !important;
+  }
+  
+  .order-1-mobile {
+    order: 1 !important;
+  }
+  
+  .order-2-mobile {
+    order: 2 !important;
+  }
+}

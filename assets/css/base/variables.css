@@ -1,53 +1,83 @@
-
 :root {
-  /* Colors */
-  --primary-color: #e63946;
-  --secondary-color: #1d3557;
-  --light-color: #f1faee;
-  --dark-color: #1d3557;
-  --gray-dark: #333333;
-  --gray-medium: #767676;
-  --gray-light: #f0f0f0;
-  --white: #ffffff;
-  --black: #000000;
-  --success-color: #28a745;
-  --error-color: #dc3545;
-  --warning-color: #ffc107;
-  --info-color: #17a2b8;
+  /* Color Palette */
+  --color-primary: #e63946;
+  --color-primary-dark: #c1121f;
+  --color-secondary: #457b9d;
+  --color-secondary-dark: #1d3557;
+  
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-light: #f1faee;
+  --color-gray-100: #f8f9fa;
+  --color-gray-200: #e9ecef;
+  --color-gray-300: #dee2e6;
+  --color-gray-400: #ced4da;
+  --color-gray-500: #adb5bd;
+  --color-gray-600: #6c757d;
+  --color-gray-700: #495057;
+  --color-gray-800: #343a40;
+  --color-gray-900: #212529;
+  --color-black: #000000;
+  
+  /* UI Colors */
+  --color-background: var(--color-white);
+  --color-surface: var(--color-gray-100);
+  --color-text: var(--color-gray-900);
+  --color-text-light: var(--color-gray-600);
+  --color-border: var(--color-gray-300);
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Component Colors */
+  --color-header-bg: var(--color-white);
+  --color-footer-bg: var(--color-gray-800);
+  --color-footer-text: var(--color-gray-200);
+  --color-card-bg: var(--color-white);
+  --color-sidebar-bg: var(--color-gray-100);
   
   /* Typography */
-  --body-font: 'Open Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --heading-font: 'Montserrat', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --base-font-size: 16px;
-  --h1-size: 2.5rem;
-  --h2-size: 2rem;
-  --h3-size: 1.5rem;
-  --h4-size: 1.25rem;
-  --h5-size: 1rem;
-  --h6-size: 0.875rem;
+  --font-primary: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-secondary: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-monospace: 'SFMono-Regular', Consolas, Monaco, 'Andale Mono', monospace;
+  
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-md: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.25rem;   /* 20px */
+  --font-size-2xl: 1.5rem;   /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem;  /* 36px */
   
   /* Spacing */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2.5rem;
-  --spacing-xxl: 4rem;
+  --spacing-xs: 0.25rem;  /* 4px */
+  --spacing-sm: 0.5rem;   /* 8px */
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 2rem;     /* 32px */
+  --spacing-2xl: 3rem;    /* 48px */
   
-  /* Layout */
-  --container-width: 1200px;
-  --sidebar-width: 300px;
-  --border-radius: 4px;
-  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Borders */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+  --border-width: 1px;
   
   /* Transitions */
-  --transition-fast: 0.2s ease;
-  --transition-base: 0.3s ease;
+  --transition-fast: 0.15s ease;
+  --transition-medium: 0.3s ease;
   --transition-slow: 0.5s ease;
   
-  /* Z-index */
-  --z-dropdown: 1000;
-  --z-fixed: 1030;
-  --z-modal: 1050;
-  --z-tooltip: 1070;
+  /* Containers */
+  --container-max-width: 1200px;
+  --container-padding: var(--spacing-lg);
+  
+  /* Z-index layers */
+  --z-index-dropdown: 100;
+  --z-index-sticky: 200;
+  --z-index-fixed: 300;
+  --z-index-modal: 400;
+  --z-index-popover: 500;
+  --z-index-toast: 600;
 }
